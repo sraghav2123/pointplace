@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Walkpast mobile app</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css" />
+<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+
+<script >
+  $( document ).on( "mobileinit", function() {
+      // Make your jQuery Mobile framework configuration changes here!
+
+      $.mobile.allowCrossDomainPages = true;
+  });
+</script>
+<script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+        
+
+
+<link rel="stylesheet" href="openlayers/theme/default/style.mobile.css" type="text/css">
+<link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
+
+
+
+
+<script type='text/javascript' src='js/OpenLayers.js'></script>
+<script src="js/mobile-base4.js"></script>
+<script src="js/mobile-jq2.js"></script>
+
+
+</head>
+<body>
+<div data-role="page" id="home">
+ <div data-role="header" data-position="fixed">
+  <h1>PointPlace</h1>
+  <!-- <img border="0" src="css/img/up.png" alt="Logo, Facebook" style="float:left;display:inline"/> -->
+ </div>
+ <div id="content" data-role="content">
+  
+    <img src="img/logo2.png" id="bghome" />
+  
+  <div id="introtext">
+  	Pointplace helps you find all shop outlets near you.
+    <p>  	
+   	This service is only available in Delhi for now.
+   </p>
+  </div>
+  <div id="homeopts">
+    <div data-role="collapsible" data-theme="a" data-content-theme="a" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d" data-collapsed="true">
+      <h2>Browse Markets</h2>
+      <ul data-role="listview">
+        <li><a href="#">Nehru Place, Delhi</a></li>
+        <li><a href="#">Connaught place, Delhi</a></li>       
+      </ul>
+    </div><!-- /collapsible -->
+    <div data-role="listview" data-theme="a" data-content-theme="a" >
+      <li><a href="#mappage" >Browse map</a></li>
+      <li><a href="#searchpage" >Search</a> </li>
+      <li><a href="#">Locate</a></li>
+    </div>
+
+  
+  </div>
+</div>
+  
+ <div data-role="footer" data-position="fixed">
+  <h4>Footer</h4>
+ </div>
+</div>
+
+<div data-role="page" id="searchpage">
+          <div data-role="header">
+            <h1>Search</h1>
+          </div>
+          <div data-role="fieldcontain">
+            <input type="search" name="query" id="query"
+                   value="" placeholder="Search for places"
+                   autocomplete="off"/>
+          </div>
+          <ul data-role="listview" data-inset="true" id="search_results"></ul> 
+</div>
+
+<div data-role="page" id="mappage">
+          <div data-role="content">
+            <div id="map" ></div>
+            <div data-role="popup" id="popupPanel" data-transition="slide" data-position-to="window" data-corners="false" data-theme="none" data-shadow="false" data-tolerance="0,0">
+              <a href="#" data-rel="back" data-role="button" data-theme="a" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+              <div id="popupPanelName" data-theme="a" data-mini="true"/> 
+            </div>
+          </div>
+
+          <div data-role="footer" data-position="fixed">
+            <a href="#popupPanel" data-rel="popup" data-transition="slide" data-position-to="window" data-role="button">Open panel</a>
+            <a href="#searchpage" data-icon="search" data-role="button">Search</a>
+            <a href="#home" id="gohome" data-icon="home" data-role="button">Home</a>
+            <a href="#layerspage" data-icon="layers" data-role="button">Layers</a>
+          </div>
+          <div id="navigation" data-role="controlgroup" data-type="vertical">
+            <a href="#" data-role="button" data-icon="plus" id="plus"
+               data-iconpos="notext"></a>
+            <a href="#" data-role="button" data-icon="minus" id="minus"
+               data-iconpos="notext"></a>
+          </div>
+        </div>
+</div>
+
+</body>
+</html>
