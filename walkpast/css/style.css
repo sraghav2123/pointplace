@@ -144,3 +144,18 @@ body {
     background: rgba(0,0,0,.5);
     margin-left: -15px;
 }
+
+.levelControlButtonItemActive {
+    position: absolute;
+    background-image: url(img/locate.png);
+    width: 18px;
+    height: 18px;
+}    
+.olControlPanel {
+    top: 70px;
+    right: 32px;
+    width: 18px;
+    height: 40px;
+    position: absolute;
+    cursor: pointer;
+}
